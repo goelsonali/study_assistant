@@ -14,7 +14,7 @@ REFLECTOR_AGENT_PROMPT = (
 reflector_agent = Agent(
     model=MODEL_GEMINI_2_0_FLASH,
     name="reflector_agent",
-    description="Given some text, search Google for the most relevant, trustworthy, and helpful online resources summarize in beginner-friendly tone",
+    description="Given some text, search Google for the most relevant, trustworthy, and helpful online resources summarise in beginner-friendly tone",
     instruction=REFLECTOR_AGENT_PROMPT,
     subagents=[quiz_agent]
 )

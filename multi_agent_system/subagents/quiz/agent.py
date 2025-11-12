@@ -2,6 +2,7 @@
 
 from google.adk.agents import Agent
 from multi_agent_system.subagents.content.agent import content_agent
+from multi_agent_system.tools.search import google_search_grounding
 
 MODEL_GEMINI_2_0_FLASH = "gemini-2.0-flash"
 
@@ -9,7 +10,7 @@ MODEL_GEMINI_2_0_FLASH = "gemini-2.0-flash"
 QUIZ_AGENT_PROMPT = (
     "Quiz Master. Your task is to generate a 3-question quiz in a structured JSON format (q, a, topic) "
     "based STRICTLY on the content provided. The following JSON structure MUST be strictly followed: "
-    "[{\"q\": \"...\", \"a\": \"...\", \"topic\": \"...\"}, ...]. This is a Few-Shot instruction."
+    "[{\"q\": \"...\", \"a\": \"...\", \"topic\": \"...\"}, ...]."
 )
 
 quiz_agent = Agent(
@@ -17,5 +18,5 @@ quiz_agent = Agent(
     name="quiz_agent",
     description="Quiz Agent is a specialist in creating quizes for the content provided.",
     instruction=QUIZ_AGENT_PROMPT,
-    subagents=[content_agent]
+    tools=[google_search_grounding]
 )

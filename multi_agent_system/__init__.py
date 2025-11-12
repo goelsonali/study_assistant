@@ -1,1 +1,1 @@
-from . import assistant
+from . import agent
