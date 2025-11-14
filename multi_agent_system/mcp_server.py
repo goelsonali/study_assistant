@@ -1,7 +1,6 @@
 from fastmcp import FastMCP
 from typing import Literal, List
 import re
-import uvicorn
 
 # Initialize the FastMCP server.
 # Updated name and instructions to fit the "Student Content Assistant" theme.
