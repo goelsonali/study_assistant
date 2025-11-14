@@ -16,9 +16,9 @@ The Study Assistant is a multi-agent system that leverages the power of large la
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                          ROOT AGENT                              │
-│                  (Coordinator & Dispatcher)                      │
-│                    Model: Gemini 2.0 Flash                       │
+│                          ROOT AGENT                             │
+│                  (Coordinator & Dispatcher)                     │
+│                    Model: Gemini 2.0 Flash                      │
 └───────────────────┬─────────────────────────────────────────────┘
                     │
         ┌───────────┴───────────┐
@@ -32,31 +32,26 @@ The Study Assistant is a multi-agent system that leverages the power of large la
           │ Delegates tasks
           │
     ┌─────┴──────────────────────────────────┐
-    │                                         │
-    ▼                                         ▼
-┌──────────────────┐            ┌─────────────────────────┐
-│ CONTENT AGENT    │            │ MOTIVATION AGENT        │
-│ • Web Research   │            │ • Encouragement         │
-│ • Summarization  │            │ • Progress Celebration  │
-│ • Simplification │            │ • Emotional Support     │
-└────────┬─────────┘            └────────────────────────┘
-         │                                 
-         │ Provides Content                 
-         │                                
-         ▼                                  
-    ┌─────────────┐
-    │ QUIZ AGENT  │
-    │ • Quiz Gen  │
-    │ • JSON Format│
-    └─────────────┘
-         │
-         └─────────────────────┐
-                               │
-    ┌──────────────────────────▼────────────────────┐
-    │         TOOLS LAYER                           │
-    ├──────────────────────────────────────────────┤
-    │  • Google Search Grounding Tool              │
-    └──────────────────────────────────────────────┘
+    │                                        │
+    ▼                                        ▼
+┌──────────────────┐            ┌────────────────────────┐
+│ CONTENT AGENT    │            │ QUIZ AGENT             │
+│ • Web Research   │            │ • Quiz Gen             │
+│ • Summarization  │            │ • JSON Format          │
+│ • Simplification │            │                        │
+└────────┬─────────┘            └──────────┬─────────────┘
+         │                                 |
+         │ Provides Content                | Generate Quiz
+         │                                 |
+         |                                 | 
+         │                                 |
+         └─────────────────────────────────┘
+                          │
+    ┌─────────────────────▼────────────────────┐
+    │         TOOLS LAYER                      │
+    ├──────────────────────────────────────────┤
+    │  • Google Search Grounding Tool          │
+    └──────────────────────────────────────────┘
 ```
 
 ### Agent Interaction Flow
