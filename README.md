@@ -32,8 +32,8 @@ The Study Assistant is a multi-agent system that leverages the power of large la
           │ Delegates tasks
           │
     ┌─────┴──────────────────────────────────┐
-    │                                         │
-    ▼                                         ▼
+    │                                        │
+    ▼                                        ▼
 ┌──────────────────┐            ┌────────────────────────┐
 │ CONTENT AGENT    │            │ QUIZ AGENT             │
 │ • Web Research   │            │ • Quiz Gen             │
